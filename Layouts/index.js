@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Header from "../Components/Header";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 import { useWindowResize } from "../util/windowResize";
 import MobileNav from "../Components/MobileNav";
 
