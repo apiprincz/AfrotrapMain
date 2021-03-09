@@ -1,0 +1,32 @@
+.fade {
+  position: relative;
+  height: 300px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.fade img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.fade img.top:hover {
+  opacity: 0;
+}
+
+.LatestContainer,
+.Container {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .LatestContainer,
+  .Container {
+    padding: 3rem;
+  }
+}
