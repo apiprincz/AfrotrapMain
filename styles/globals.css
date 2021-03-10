@@ -116,7 +116,7 @@ a.link_white svg:hover {
 .cart_count {
   background: #2196f3;
   color: white;
-  padding: 6px;
+  padding: 4px 6px;
   border-radius: 50%;
   right: -9px;
   top: -6px;
@@ -136,6 +136,25 @@ a.link_white svg:hover {
 .btn-mobile {
   display: none;
   text-align: right;
+}
+.swiper_ex > .swiper-button-next {
+  background-image: url(/arrow-right-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+.swiper_ex > .swiper-button-prev {
+  background-image: url(/arrow-left-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper_ex > .swiper-button-next::after {
+  display: none;
+}
+.swiper_ex > .swiper-button-prev::after {
+  display: none;
 }
 @media only screen and (max-width: 1000px) {
   .link_white {

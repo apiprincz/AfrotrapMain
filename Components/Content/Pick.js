@@ -5,7 +5,7 @@ import Link from "next/link";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Styles from "../../styles/Latest.module.css";
+import Styles from "../../styles/Pick.module.css";
 import Fade from "react-reveal/Fade";
 
 const Pick = () => {
@@ -58,6 +58,15 @@ const Pick = () => {
       currency: "USD",
     }).format(value);
 
+  const itemShowHandler = (e) => {
+    e.currentTarget.style.borderBottom = "4px solid #ffffff";
+    console.log(e.currentTarget.lastChild);
+    e.currentTarget.lastChild.classList.add(`${Styles.ItemOverlayShow}`);
+  };
+  const itemRemoveHandler = (e) => {
+    e.currentTarget.style.borderBottom = "";
+    e.currentTarget.lastChild.classList.remove(`${Styles.ItemOverlayShow}`);
+  };
   return (
     <div className="mx-auto col-md-11 pt-5 px-5">
       <div
@@ -75,10 +84,13 @@ const Pick = () => {
           </a>
         </Link>
       </div>
-      <div className="d-flex col-md-12 col-12 pt-5 px-5 flex-wrap">
+      <div className="d-flex col-md-12 col-12 pt-5 px-5 justify-content-between flex-wrap">
         {images.map((image, index) => {
           return (
-            <div key={index} className="col-md-3 col-sm-6 col-12">
+            <div
+              key={index}
+              className={`col-md-3 col-sm-6 col-12 ${Styles.Item}`}
+            >
               <div>
                 <motion.div
                   whileHover={{ scale: 1.1 }}

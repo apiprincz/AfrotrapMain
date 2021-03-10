@@ -1,12 +1,12 @@
 .hamburger {
-  width: 30px;
+  width: 17px;
   height: 2px;
   background: white;
   position: relative;
 }
 .hamburger::before {
   content: "";
-  width: 42px;
+  width: 26px;
   height: 2px;
   display: block;
   position: absolute;
@@ -15,7 +15,7 @@
 }
 .hamburger::after {
   content: "";
-  width: 42px;
+  width: 26px;
   height: 2px;
   display: block;
   background: white;

@@ -122,6 +122,15 @@ const Exclusive = () => {
           loop="true"
           tag="section"
           grabCursor="true"
+          on={{
+            slideChangeTransitionEnd: function () {
+              if (this.isEnd) {
+                this.navigation.$nextEl.css("display", "none");
+              } else {
+                this.navigation.$nextEl.css("display", "block");
+              }
+            },
+          }}
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -142,7 +151,7 @@ const Exclusive = () => {
           }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
-          className="mx-auto text-center d-flex align-items-stretch overflow-hidden"
+          className="mx-auto text-center d-flex align-items-stretch overflow-hidden swiper_ex"
         >
           {images.map((image, index) => {
             return (
