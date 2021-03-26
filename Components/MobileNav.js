@@ -32,7 +32,7 @@ const MobileNav = () => {
   return (
     <div>
       <nav
-        class={`navbar navbar-expand-lg d-flex justify-content-between align-items-center px-4 ${Styles.navContainer}`}
+        className={`navbar navbar-expand-lg d-flex justify-content-between align-items-center px-4 ${Styles.navContainer}`}
       >
         <div className={Styles.hamburger} onClick={menuHandler}></div>
 
@@ -42,10 +42,10 @@ const MobileNav = () => {
           </a>
         </Link>
 
-        <div class={Styles.navMenu}>
+        <div className={Styles.navMenu}>
           <ul
-            class="navbar-nav d-flex flex-direction-column align-items-left"
-            style={{ width: "50%" }}
+            className="navbar-nav d-flex flex-direction-column align-items-left"
+            style={{ width: "100%", textAlign: "center" }}
           >
             <li className={`nav-item ${isActive("/")}`}>
               <Link href="/">
@@ -68,8 +68,8 @@ const MobileNav = () => {
               </Link>
             </li>
             <li className={`nav-item ${isActive("/kids")}`}>
-              <Link href="/kids">
-                <a href="/kids">Kids</a>
+              <Link href="/product">
+                <a href="/product">Products</a>
               </Link>
             </li>
             <li className={`nav-item ${isActive("/about")}`}>

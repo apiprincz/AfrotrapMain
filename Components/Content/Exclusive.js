@@ -103,9 +103,9 @@ const Exclusive = () => {
           </p>
         </div>
         <Fade left>
-          <Link href="/shop">
+          <Link href="/product">
             <a
-              href="/shop"
+              href="/product"
               className="fs-5 p-2 btn-desk"
               style={{ color: "blue" }}
             >
@@ -182,7 +182,7 @@ const Exclusive = () => {
                       <p>{numberFormat(image.price)}</p>
                       <div className="d-flex justify-content-between">
                         <div className="d-flex align-items-center">
-                          <Link href={`/${image.category}`}>
+                          <Link href={`/product`}>
                             <a>
                               <FontAwesomeIcon
                                 icon={["fas", "compress-arrows-alt"]}
@@ -236,9 +236,9 @@ const Exclusive = () => {
         </Swiper>
       </div>
       <Fade left>
-        <Link href="/shop">
+        <Link href="/product">
           <a
-            href="/shop"
+            href="/product"
             className="fs-5 p-2 btn-mobile"
             style={{ color: "blue" }}
           >

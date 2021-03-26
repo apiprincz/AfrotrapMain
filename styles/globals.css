@@ -157,9 +157,6 @@ a.link_white svg:hover {
   display: none;
 }
 @media only screen and (max-width: 1000px) {
-  .link_white {
-    display: none;
-  }
   .btn_colored {
     display: flex;
     width: 100%;
@@ -186,5 +183,16 @@ a.link_white svg:hover {
   .btn-mobile {
     display: block;
     text-align: right;
+  }
+  .product_title {
+    white-space: break-spaces;
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .product_title {
+    font-size: 17px;
+    line-height: 24px;
+    display: block;
   }
 }

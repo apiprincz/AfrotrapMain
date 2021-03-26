@@ -8,49 +8,51 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Styles from "../../styles/Pick.module.css";
 import Fade from "react-reveal/Fade";
 
-const Pick = () => {
-  const images = [
-    {
-      large: "pick1.png",
-      featured: "hoodiestyleredhmm.png",
-      description: "Afrotrap red &amp; black ",
-      slug: "define your true style",
-      discountPrice: 100,
-      price: 150,
-    },
-    {
-      large: "pick2.png",
-      featured: "hoodiestyleyellow.png",
-      description: "Afrotrap yellow &amp; ",
-      slug: "define your true color",
-      discountPrice: 100,
-      price: 150,
-    },
-    {
-      large: "pick3.png",
-      featured: "hoodiestyleredhmm.png",
-      description: "Afrotrap red &amp",
-      slug: "define your true style",
-      discountPrice: 100,
-      price: 150,
-    },
-    {
-      large: "pick4.png",
-      featured: "hoodiestyleyellow.png",
-      description: "Afrotrap yellow &amp; ",
-      slug: "define your true color",
-      discountPrice: 100,
-      price: 150,
-    },
-    {
-      large: "pick5.png",
-      featured: "hoodiestyleredhmm.png",
-      description: "Afrotrap red &amp; ",
-      slug: "define your true style",
-      discountPrice: 100,
-      price: 150,
-    },
-  ];
+const Pick = ({ products }) => {
+  console.log("products" + products);
+
+  // const images = [
+  //   {
+  //     large: "pick1.png",
+  //     featured: "hoodiestyleredhmm.png",
+  //     description: "Afrotrap red &amp; black ",
+  //     slug: "define your true style",
+  //     discountPrice: 100,
+  //     price: 150,
+  //   },
+  //   {
+  //     large: "pick2.png",
+  //     featured: "hoodiestyleyellow.png",
+  //     description: "Afrotrap yellow &amp; ",
+  //     slug: "define your true color",
+  //     discountPrice: 100,
+  //     price: 150,
+  //   },
+  //   {
+  //     large: "pick3.png",
+  //     featured: "hoodiestyleredhmm.png",
+  //     description: "Afrotrap red &amp",
+  //     slug: "define your true style",
+  //     discountPrice: 100,
+  //     price: 150,
+  //   },
+  //   {
+  //     large: "pick4.png",
+  //     featured: "hoodiestyleyellow.png",
+  //     description: "Afrotrap yellow &amp; ",
+  //     slug: "define your true color",
+  //     discountPrice: 100,
+  //     price: 150,
+  //   },
+  //   {
+  //     large: "pick5.png",
+  //     featured: "hoodiestyleredhmm.png",
+  //     description: "Afrotrap red &amp; ",
+  //     slug: "define your true style",
+  //     discountPrice: 100,
+  //     price: 150,
+  //   },
+  // ];
 
   const numberFormat = (value) =>
     new Intl.NumberFormat("en-IN", {
@@ -68,7 +70,7 @@ const Pick = () => {
     e.currentTarget.lastChild.classList.remove(`${Styles.ItemOverlayShow}`);
   };
   return (
-    <div className="mx-auto col-md-11 pt-5 px-5">
+    <div className={`mx-auto col-md-11 pt-5 ${Styles.PickWrapper}`}>
       <div
         className="text-white d-flex justify-content-between p-2 col-md-12"
         style={{ background: "#32629B", borderRadius: "20px" }}
@@ -77,27 +79,29 @@ const Pick = () => {
           <span href="/shop">Pick Of The Week</span>
         </Fade>
 
-        <Link href="/shop">
-          <a href="/shop" className="link_white">
+        <Link href="/product">
+          <a href="/product" className="link_white">
             View All
             <FontAwesomeIcon icon={["fas", "caret-right"]} />
           </a>
         </Link>
       </div>
-      <div className="d-flex col-md-12 col-12 pt-5 px-5 justify-content-between flex-wrap">
-        {images.map((image, index) => {
+      <div className="d-flex col-md-12 col-12 pt-5 justify-content-between flex-wrap">
+        {products.slice(0, 5).map((item, index) => {
           return (
             <div
               key={index}
               className={`col-md-3 col-sm-6 col-12 ${Styles.Item}`}
+              style={{ marginBottom: "10px" }}
             >
               <div>
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  style={{ textAlign: "center" }}
                 >
-                  <Image
-                    src={`/pick/${image.large}`}
+                  <img
+                    src={item.images[0].url}
                     alt="brownhoodie"
                     width="250"
                     height="200"
@@ -105,11 +109,26 @@ const Pick = () => {
                   />
                 </motion.div>
 
-                <p>{image.description}</p>
-                <p className="mb-0">{numberFormat(image.discountPrice)}</p>
-                <p>
-                  <s>{numberFormat(image.price)}</s>
-                </p>
+                <Link href={`/product/${item._id}`}>
+                  <a className="d-block pt-3">{item.title}</a>
+                </Link>
+                <p className="mb-0">{numberFormat(item.price)}</p>
+                <div className="d-flex justify-content-between col-md-10">
+                  <p>
+                    <s>{numberFormat(100)}</s>
+                  </p>
+                  <Link href={`/product/${item._id}`}>
+                    <a
+                      style={{
+                        background: "orange",
+                        color: "white",
+                        padding: "10px",
+                      }}
+                    >
+                      View Details
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           );

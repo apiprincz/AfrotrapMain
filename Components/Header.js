@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useWindowResize } from "../util/windowResize";
@@ -7,12 +7,16 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
+import { DataContext } from "../store/GlobalState";
 
 library.add(fab, faCartPlus);
 library.add(fas);
 
 const Header = () => {
   const router = useRouter();
+  const [state, dispatch] = useContext(DataContext);
+  const { cart } = state;
+
   const { width } = useWindowResize();
   const breakpoint = 1000;
 
@@ -75,8 +79,8 @@ const Header = () => {
                 </Link>
               </li>
               <li className={`nav-item ${isActive("/kids")}`}>
-                <Link href="/kids">
-                  <a href="/kids">Kids</a>
+                <Link href="/product">
+                  <a href="/product">Products</a>
                 </Link>
               </li>
               <li className={`nav-item ${isActive("/about")}`}>
@@ -89,7 +93,7 @@ const Header = () => {
                   <a href="#" style={{ position: "relative" }}>
                     Cart
                     <FontAwesomeIcon icon={["fas", "cart-arrow-down"]} />
-                    <div className=" cart_count cart__main">1</div>
+                    <div className=" cart_count cart__main">{cart.length}</div>
                   </a>
                 </Link>
               </li>

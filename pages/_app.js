@@ -7,6 +7,8 @@ import "swiper/components/scrollbar/scrollbar.scss";
 import "swiper/components/effect-flip/effect-flip.min.css";
 import "swiper/components/pagination/pagination.scss";
 
+import { DataProvider } from "../store/GlobalState";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -42,7 +44,9 @@ function MyApp({ Component, pageProps }) {
           href="https://unpkg.com/swiper/css/swiper.min.css"
         ></link>
       </Head>
-      <Component {...pageProps} />
+      <DataProvider>
+        <Component {...pageProps} />
+      </DataProvider>
     </>
   );
 }

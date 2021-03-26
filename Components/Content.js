@@ -4,10 +4,12 @@ import Exclusive from "../Components/Content/Exclusive";
 import Flash from "../Components/Content/Flash";
 import Latest from "../Components/Content/Latest";
 
-const Content = () => {
+const Content = ({ products }) => {
+  console.log("products" + JSON.stringify(products));
+
   return (
     <div>
-      <Pick />
+      <Pick products={products} />
       <Exclusive />
       <Flash />
       <Latest />
