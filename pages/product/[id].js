@@ -74,23 +74,10 @@ const DetailProduct = ({ product }) => {
       <Head>
         <title>Product Details</title>
       </Head>
-      <div style={{ paddingTop: "100px", background: "#00000040" }}>
+      <div style={{ paddingTop: "100px", background: "rgba(0, 0, 0, 0.05)" }}>
         <div
           className={` d-flex justify-content-between ${Styles.productWrapper}`}
         >
-          <Link href="/product">
-            <a
-              className="mb-10"
-              style={{
-                background: "orange",
-                color: "white",
-                padding: "10px",
-                marginBottom: "10px",
-              }}
-            >
-              Back to Products
-            </a>
-          </Link>
           <div
             className={`d-flex  align-items-start ${Styles.productDetail}`}
             ref={imgRef}
@@ -112,6 +99,7 @@ const DetailProduct = ({ product }) => {
             src={product.images[tab].url}
             alt={product.images[tab].url}
             className={Styles.productLarge}
+            style={{ border: "2px solid orange" }}
           ></img>
           <div className={`px-3 ${Styles.story}`}>
             <h1 className="fs-3">{product.title}</h1>
