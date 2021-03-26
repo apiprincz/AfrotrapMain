@@ -38,7 +38,7 @@ const getProducts = async (req, res) => {
     const products = await Products.find({});
     res.json({
       status: "success",
-      result: JSON.stringify(products.length),
+      result: products.length,
       products,
     });
   } catch (err) {
