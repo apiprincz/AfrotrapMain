@@ -33,16 +33,19 @@ export default Home;
 export async function getStaticProps() {
   dotenv.config({ path: "ENV_FILENAME" });
 
-  const client = new MongoClient(`${process.env.MONGODB_URL}`, {
-    auth: {
-      user: process.env.MONGODB_USER,
-      password: process.env.MONGODB_PASS,
-    },
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  });
+  const client = new MongoClient(
+    "mongodb+srv://Adeniyi:IMI6WmuFoyZabLTr@cluster0.vkj85.mongodb.net/Afrotrap?retryWrites=true&w=majority",
+    {
+      auth: {
+        user: process.env.MONGODB_USER,
+        password: process.env.MONGODB_PASS,
+      },
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
+    }
+  );
 
   if (!client.isConnected()) await client.connect();
 
