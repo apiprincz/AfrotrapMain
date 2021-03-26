@@ -5,7 +5,7 @@ import { server } from "../config";
 export const getData = async (url) => {
   const baseURL = `${server}/api/${url}`;
 
-  const res = await fetch(baseURL, {
+  const res = await fetch(new URL(baseURL), {
     method: "GET",
     origin: "*",
   });
