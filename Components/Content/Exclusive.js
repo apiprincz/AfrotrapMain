@@ -155,9 +155,8 @@ const Exclusive = () => {
         >
           {images.map((image, index) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <div
-                  key={index}
                   className="col-12 col-md-12 p-2 flex-1"
                   style={{
                     border: "1px solid #707070",
