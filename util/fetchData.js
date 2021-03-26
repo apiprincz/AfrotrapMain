@@ -1,11 +1,12 @@
-import { server } from "../config";
+import { server, baseUrl } from "../config";
 
 // const server = process.env.NEXT_PUBLIC_SERVER;
 
 export const getData = async (url) => {
-  const baseURL = `${server}/api/${url}`;
+  const baseURL = `${baseUrl}/api/${url}`;
+  const reqUrl = `${server}`;
 
-  const res = await fetch(new URL(baseURL), {
+  const res = await fetch(new URL(reqUrl, baseURL), {
     method: "GET",
     origin: "*",
   });
