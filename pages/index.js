@@ -4,6 +4,12 @@ import Banner from "../Components/Banner";
 import Content from "../Components/Content";
 import { getData } from "../util/fetchData";
 import { useState } from "react";
+import { server, baseUrl } from "../config";
+// import Products from "../Models/productModel";
+import mongoose from "mongoose";
+import { MongoClient } from "mongodb";
+
+import dotenv from "dotenv";
 
 const Home = ({ products }) => {
   return (
@@ -22,17 +28,30 @@ const Home = ({ products }) => {
   );
 };
 
+export default Home;
+
 export async function getStaticProps() {
-  const res = await getData("product");
-  // const data = await res.json();
-  // console.log(res.products);
+  dotenv.config({ path: "ENV_FILENAME" });
+
+  const client = new MongoClient(process.env.MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
+  if (!client.isConnected()) await client.connect();
+
+  const database = client.db("Afrotrap");
+  const products = await database.collection("products").find({}).toArray();
+
+  console.log(products);
+
+  if (!products) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
-    props: {
-      products: res.products,
-      result: res.result,
-    }, // will be passed to the page component as props
+    props: { products: JSON.parse(JSON.stringify(products)) }, // will be passed to the page component as props
   };
 }
-
-export default Home;

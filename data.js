@@ -1,4 +1,4 @@
-import dbConnect from "../../../util/dbConnect";
+import dbConnect from "./util/dbConnect";
 import dotenv from "dotenv";
 
 import Products from "../../../Models/productModel";
@@ -10,28 +10,6 @@ dbConnect();
 const cors = Cors({
   methods: ["GET", "HEAD"],
 });
-
-function runMiddleware(req, res, fn) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-
-      return resolve(result);
-    });
-  });
-}
-export default async (req, res) => {
-  switch (req.method) {
-    case "GET":
-      await runMiddleware(req, res, cors);
-
-      await getProducts(req, res);
-
-      break;
-  }
-};
 
 export const getProducts = async (req, res) => {
   try {
