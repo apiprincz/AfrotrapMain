@@ -1,4 +1,4 @@
-import { baseUrl } from "../config";
+import { baseUrl } from "../config.js";
 
 // const server = process.env.NEXT_PUBLIC_SERVER;
 
