@@ -40,6 +40,8 @@ export async function getStaticProps() {
     },
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
   });
 
   if (!client.isConnected()) await client.connect();
