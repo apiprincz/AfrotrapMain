@@ -22,7 +22,7 @@ const Home = ({ products }) => {
 };
 
 export async function getStaticProps(context) {
-  const res = await getData(`product`);
+  const res = await getData("product");
   // const data = await res.json();
   console.log(res);
 
