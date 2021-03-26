@@ -1,7 +1,7 @@
 module.exports = {
   env: {
-    // NEXT_PUBLIC_SERVER: process.env.NEXT_PUBLIC_SERVER,
+    NEXT_PUBLIC_BASEURL: process.env.NEXT_PUBLIC_BASEURL,
 
-    MONGODB_URL: process.env.MONGODB_URL,
+    NEXT_PUBLIC_MONGODB_URL: process.env.NEXT_PUBLIC_MONGODB_URL,
   },
 };

@@ -8,7 +8,7 @@ const dbConnect = () => {
   }
 
   return (
-    mongoose.connect(process.env.MONGODB_URL, {
+    mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URL, {
       auth: {
         user: process.env.MONGODB_USER,
         password: process.env.MONGODB_PASS,
