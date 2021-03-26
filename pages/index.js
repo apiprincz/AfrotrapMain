@@ -3,6 +3,7 @@ import IndexLayout from "../Layouts";
 import Banner from "../Components/Banner";
 import Content from "../Components/Content";
 import { getData } from "../util/fetchData";
+import { useState } from "react";
 
 const Home = ({ products }) => {
   return (
