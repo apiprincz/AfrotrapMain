@@ -110,17 +110,17 @@ const index = ({ products }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const res = await getData("product");
-  //   const data = await res.json();
-  console.log(res);
-  // res = JSON.stringify(res.winners);
-  return {
-    props: {
-      products: JSON.parse(JSON.stringify(res.products)),
-      result: res.result,
-    }, // will be passed to the page component as props
-  };
-}
+// export async function getServerSideProps(context) {
+//   const res = await getData("product");
+//   //   const data = await res.json();
+//   console.log(res);
+//   // res = JSON.stringify(res.winners);
+//   return {
+//     props: {
+//       products: JSON.parse(JSON.stringify(res.products)),
+//       result: res.result,
+//     }, // will be passed to the page component as props
+//   };
+// }
 
 export default index;
