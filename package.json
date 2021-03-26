@@ -22,19 +22,16 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "framer-motion": "^3.10.0",
-    
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.11.15",
+    "mongoose": "^5.12.2",
     "next": "10.0.7",
     "next-absolute-url": "^1.2.2",
     "node-sass": "^5.0.0",
     "react": "17.0.1",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "17.0.1",
-  
-  
     "react-reveal": "^1.2.2",
     "scrollreveal": "^4.0.9",
     "swiper": "^6.5.0"
