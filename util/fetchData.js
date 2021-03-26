@@ -3,7 +3,9 @@ import { server } from "../config";
 // const server = process.env.NEXT_PUBLIC_SERVER;
 
 export const getData = async (url) => {
-  const res = await fetch(`${server}/api/${url}`, {
+  const baseURL = `${server}/api/${url}`;
+
+  const res = await fetch(new URL(baseURL), {
     method: "GET",
     origin: "*",
   });
