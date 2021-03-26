@@ -6,7 +6,7 @@ export const getData = async (url) => {
   const baseURL = `${baseUrl}/api/${url}`;
   const reqUrl = `${server}`;
 
-  const res = await fetch(new URL(reqUrl, baseURL), {
+  const res = await fetch((reqUrl, baseURL), {
     method: "GET",
     origin: "*",
     headers: {
