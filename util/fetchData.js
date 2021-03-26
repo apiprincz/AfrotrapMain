@@ -16,7 +16,7 @@ export const getData = async (url) => {
     },
   });
 
-  const data = await res.json();
+  const data = await res.json({});
 
   return data;
 };

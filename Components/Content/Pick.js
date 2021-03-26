@@ -9,8 +9,8 @@ import Styles from "../../styles/Pick.module.css";
 import Fade from "react-reveal/Fade";
 
 const Pick = ({ products }) => {
-  console.log("products" + JSON.stringify(products, null, 4));
-  const picks = JSON.parse(JSON.stringify(products, null, 4));
+  console.log(products);
+  // const picks = JSON.parse(JSON.stringify(products, null, 4));
   // const images = [
   //   {
   //     large: "pick1.png",
@@ -87,7 +87,7 @@ const Pick = ({ products }) => {
         </Link>
       </div>
       <div className="d-flex col-md-12 col-12 pt-5 justify-content-between flex-wrap">
-        {picks.slice(0, 5).map((item, index) => {
+        {products.slice(0, 5).map((item, index) => {
           return (
             <div
               key={index}

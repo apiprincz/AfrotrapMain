@@ -182,7 +182,7 @@ const DetailProduct = ({ product }) => {
 export async function getServerSideProps({ params: { id } }) {
   const res = await getData(`product/${id}`);
   // const data = await res.json();
-  console.log(res);
+  //   console.log(res);
   // res = JSON.stringify(res.winners);
   return {
     props: {

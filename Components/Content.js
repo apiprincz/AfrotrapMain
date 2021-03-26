@@ -5,7 +5,9 @@ import Flash from "../Components/Content/Flash";
 import Latest from "../Components/Content/Latest";
 
 const Content = ({ products }) => {
-  console.log("products" + JSON.stringify(products));
+  // console.log("products" + JSON.stringify(products));
+
+  // console.log(products);
 
   return (
     <div>

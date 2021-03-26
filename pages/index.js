@@ -22,10 +22,10 @@ const Home = ({ products }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const res = await getData("product");
   // const data = await res.json();
-  console.log(res);
+  // console.log(res.products);
 
   return {
     props: {

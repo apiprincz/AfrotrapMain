@@ -113,7 +113,7 @@ const index = ({ products }) => {
 export async function getServerSideProps() {
   const res = await getData("product");
   // const data = await res.json();
-  console.log(res);
+  //   console.log(res);
   // res = JSON.stringify(res.winners);
   return {
     props: {
