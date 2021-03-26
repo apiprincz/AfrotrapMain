@@ -9,6 +9,10 @@ const dbConnect = () => {
 
   return (
     mongoose.connect(process.env.MONGODB_URL, {
+      auth: {
+        user: process.env.MONGODB_USER,
+        password: process.env.MONGODB_PASS,
+      },
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
