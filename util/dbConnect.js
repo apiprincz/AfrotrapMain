@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
 // require("dotenv").config({ path: "ENV_FILENAME" });
 
-// require("dotenv").config();
-const env = require("../env-config.js");
+dotenv.config({ path: "ENV_FILENAME" });
 
 const dbConnect = () => {
   // check if we have a connection to the database or if it's currently
