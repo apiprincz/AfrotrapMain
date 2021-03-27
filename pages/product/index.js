@@ -7,7 +7,7 @@ import Image from "next/image";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import dotenv from "dotenv";
 import { useWindowResize } from "../../util/windowResize";
 import { addToCart } from "../../store/Actions";
 import { getData } from "../../util/fetchData.js";
