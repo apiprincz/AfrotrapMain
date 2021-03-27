@@ -1,3 +1,5 @@
+// require("dotenv").config({ path: "ENV_FILENAME" });
+
 module.exports = {
   env: {
     NEXT_PUBLIC_BASEURL: process.env.NEXT_PUBLIC_BASEURL,
