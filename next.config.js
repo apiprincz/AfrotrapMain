@@ -1,10 +1,10 @@
-// require("dotenv").config();
+require("dotenv").config();
 
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
 module.exports = {
   env: {
-    NEXT_PUBLIC_MONGODB_URL: process.env.MONGODB_URL,
+    NEXT_PUBLIC_MONGO_URL: process.env.NEXT_PUBLIC_MONGO_URL,
   },
   // webpack: (config, { isServer }) => {
   //   // Fixes npm packages that depend on `fs` module
