@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import Products from "../../../Models/productModel.js";
 import Cors from "cors";
 
+const env = require("../../../env-config.js");
+
 dotenv.config({ path: "ENV_FILENAME" });
 
 dbConnect();

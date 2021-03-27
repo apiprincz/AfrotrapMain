@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 // require("dotenv").config({ path: "ENV_FILENAME" });
-require("dotenv").config();
+
+// require("dotenv").config();
+const env = require("../env-config.js");
 
 const dbConnect = () => {
   // check if we have a connection to the database or if it's currently
@@ -12,8 +14,8 @@ const dbConnect = () => {
   return (
     mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URL, {
       auth: {
-        user: process.env.MONGODB_USER,
-        password: process.env.MONGODB_PASS,
+        user: process.env.NEXT_PUBLIC_MONGODB_USER,
+        password: process.env.NEXT_PUBLIC_MONGODB_PASS,
       },
       useNewUrlParser: true,
       useUnifiedTopology: true,
