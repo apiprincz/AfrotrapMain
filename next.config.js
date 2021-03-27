@@ -19,11 +19,21 @@ module.exports = {
   //   };
   //   return config;
   // },
-  build: {
-    extend(config, {}) {
-      config.node = {
-        fs: "empty",
-      };
-    },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Note: we provide webpack above so you should not `require` it
+    // Perform customizations to webpack config
+    config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
+    config.node = {
+      fs: "empty",
+    };
+    // Important: return the modified config
+    return config;
   },
+  // build: {
+  //   extend(config, {}) {
+  //     config.node = {
+  //       fs: "empty",
+  //     };
+  //   },
+  // },
 };
