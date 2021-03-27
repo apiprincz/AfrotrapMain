@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useWindowResize } from "../../util/windowResize";
 import { addToCart } from "../../store/Actions";
 import { getData } from "../../util/fetchData.js";
+import dotenv from "dotenv";
 
 import Styles from "../../styles/Product.module.css";
 import { DataContext } from "../../store/GlobalState";
@@ -111,6 +112,8 @@ const index = ({ products }) => {
 };
 
 export async function getServerSideProps(context) {
+  dotenv.config({ path: "ENV_FILENAME" });
+
   const res = await getData("product");
   //   const data = await res.json();
   console.log(res);

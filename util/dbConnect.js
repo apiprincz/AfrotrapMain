@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 // require("dotenv").config({ path: "ENV_FILENAME" });
 
-dotenv.config({ path: "ENV_FILENAME" });
+// require("dotenv").config();
+// const env = require("../env-config.js");
 
 const dbConnect = () => {
   // check if we have a connection to the database or if it's currently
@@ -9,6 +10,7 @@ const dbConnect = () => {
   if (mongoose.connection.readyState >= 1) {
     return;
   }
+  dotenv.config({ path: "ENV_FILENAME" });
 
   return (
     mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URL, {
