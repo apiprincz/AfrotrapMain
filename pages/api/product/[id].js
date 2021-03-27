@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import Products from "../../../Models/productModel";
 import Cors from "cors";
 
-// dotenv.config({ path: "ENV_FILENAME" });
+dotenv.config({ path: "ENV_FILENAME" });
 
 dbConnect();
 const cors = Cors({

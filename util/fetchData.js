@@ -1,9 +1,7 @@
-import { baseUrl } from "../config.js";
-
-// const server = process.env.NEXT_PUBLIC_SERVER;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getData = async (url) => {
-  const baseURL = `${baseUrl}/api/${url}`;
+  const baseURL = `${BASE_URL}/api/${url}`;
   // const reqUrl = `${server}`;
 
   const res = await fetch(baseURL, {

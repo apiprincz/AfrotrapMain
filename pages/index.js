@@ -4,7 +4,7 @@ import Banner from "../Components/Banner";
 import Content from "../Components/Content";
 import { getData } from "../util/fetchData";
 import { useState } from "react";
-import { server, baseUrl } from "../config";
+// import { server, baseUrl } from "../config";
 // import Products from "../Models/productModel";
 import mongoose from "mongoose";
 import { MongoClient } from "mongodb";
