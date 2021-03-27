@@ -1,5 +1,7 @@
 // require("dotenv").config();
 
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+
 module.exports = {
   env: {
     NEXT_PUBLIC_MONGODB_URL: process.env.MONGODB_URL,
@@ -19,15 +21,17 @@ module.exports = {
   //   };
   //   return config;
   // },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (phase, { buildId, dev, isServer, defaultLoaders, fs, webpack }) => {
     // Note: we provide webpack above so you should not `require` it
     // Perform customizations to webpack config
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
     config.node = {
-      fs: false,
+      fs: true,
     };
 
     // Important: return the modified config
-    return config;
+    return {
+      config,
+    };
   },
 };
