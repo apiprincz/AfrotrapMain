@@ -19,11 +19,11 @@ module.exports = {
   //   };
   //   return config;
   // },
-  // build: {
-  //   extend(config, {}) {
-  //     config.node = {
-  //       fs: "empty",
-  //     };
-  //   },
-  // },
+  build: {
+    extend(config, {}) {
+      config.node = {
+        fs: "empty",
+      };
+    },
+  },
 };
