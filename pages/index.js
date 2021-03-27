@@ -34,6 +34,8 @@ export async function getStaticProps() {
   if (typeof window !== "undefined") {
     dotenv.config({ path: "ENV_FILENAME" });
   }
+  dotenv.config({ path: "ENV_FILENAME" });
+
   const client = new MongoClient(process.env.MONGODB_URL, {
     auth: {
       user: process.env.MONGODB_USER,
