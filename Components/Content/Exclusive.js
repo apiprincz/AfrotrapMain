@@ -9,7 +9,7 @@ import SwiperCore, { Navigation, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useWindowResize } from "../../util/windowResize";
 import Styles from "../../styles/Exclusive.module.css";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 // install Swiper modules
 SwiperCore.use([A11y, Scrollbar, Navigation]);
@@ -102,17 +102,18 @@ const Exclusive = () => {
             </div>
           </p>
         </div>
-
-        <Link href="/product">
-          <a
-            href="/product"
-            className="fs-5 p-2 btn-desk"
-            style={{ color: "blue" }}
-          >
-            Visit Our Store
-            <FontAwesomeIcon icon={["fas", "caret-right"]} />
-          </a>
-        </Link>
+        <Fade left>
+          <Link href="/product">
+            <a
+              href="/product"
+              className="fs-5 p-2 btn-desk"
+              style={{ color: "blue" }}
+            >
+              Visit Our Store
+              <FontAwesomeIcon icon={["fas", "caret-right"]} />
+            </a>
+          </Link>
+        </Fade>
       </div>
       <div className={`d-flex col-md-12 col-12  ${Styles.SwiperContainer}`}>
         <Swiper
@@ -233,17 +234,18 @@ const Exclusive = () => {
           })}
         </Swiper>
       </div>
-
-      <Link href="/product">
-        <a
-          href="/product"
-          className="fs-5 p-2 btn-mobile"
-          style={{ color: "blue" }}
-        >
-          Visit Our Store
-          <FontAwesomeIcon icon={["fas", "caret-right"]} />
-        </a>
-      </Link>
+      <Fade left>
+        <Link href="/product">
+          <a
+            href="/product"
+            className="fs-5 p-2 btn-mobile"
+            style={{ color: "blue" }}
+          >
+            Visit Our Store
+            <FontAwesomeIcon icon={["fas", "caret-right"]} />
+          </a>
+        </Link>
+      </Fade>
     </div>
   );
 };

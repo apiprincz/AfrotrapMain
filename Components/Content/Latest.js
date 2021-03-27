@@ -7,7 +7,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import Styles from "../../styles/Latest.module.css";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 library.add(far, fas);
 
@@ -62,7 +62,9 @@ const Latest = () => {
         className=" d-flex justify-content-around p-2 col-md-12"
         style={{ background: "#20181842", borderRadius: "20px" }}
       >
-        <span href="/shop">Latest Arrivals</span>
+        <Fade left>
+          <span href="/shop">Latest Arrivals</span>
+        </Fade>
       </div>
       <div
         className={`d-flex col-md-12 col-12 flex-wrap ${Styles.LatestContainer} `}

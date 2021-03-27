@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import SwiperCore, { Navigation, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Styles from "../../styles/Flash.module.css";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 SwiperCore.use([A11y, Scrollbar, Navigation]);
 
@@ -155,8 +155,9 @@ const Flash = () => {
           </Swiper>
         </div>
         <div className="col-lg-6 col-md-12 pt-4">
-          <h1> FLASH SALES</h1>
-
+          <Fade top>
+            <h1> FLASH SALES</h1>
+          </Fade>
           <span
             className={`text-end d-block fs-10 px-4 ${Styles.SalesPitch}`}
             style={{ color: "white" }}

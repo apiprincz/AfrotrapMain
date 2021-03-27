@@ -6,7 +6,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 library.add(fab, faCartPlus);
 
@@ -17,10 +17,12 @@ const Banner = () => {
         className={`col-md-12 d-flex align-items-center ${Styles.Container}`}
       >
         <div className={`col-md-4 text-white ${Styles.Main}`}>
-          <h1>
-            The <br></br> People<span style={{ color: "yellow" }}>'</span>s{" "}
-            <br></br> Hoodies Store
-          </h1>
+          <Fade top>
+            <h1>
+              The <br></br> People<span style={{ color: "yellow" }}>'</span>s{" "}
+              <br></br> Hoodies Store
+            </h1>
+          </Fade>
 
           <p className="py-3">
             Your one-stop store that caters for Men, Women, Kids &amp; also{" "}

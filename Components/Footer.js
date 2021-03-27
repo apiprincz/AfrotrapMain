@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Styles from "../styles/Footer.module.css";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 library.add(fab, faCartPlus);
 
@@ -18,11 +18,12 @@ const Footer = () => {
           className={`col-md-12 d-flex justify-content-around flex-wrap align-items-center py-5 ${Styles.Subscribe}`}
           style={{ background: "#32629B" }}
         >
-          <p className="text-white fStyle">
-            Subscribe to our newsletter <br className="break" /> to not miss out
-            cool deals
-          </p>
-
+          <Fade left>
+            <p className="text-white fStyle">
+              Subscribe to our newsletter <br className="break" /> to not miss
+              out cool deals
+            </p>
+          </Fade>
           <form className="d-flex justify-content-between align-items-start flex-wrap">
             <div className="mb-3 col-12">
               <input

@@ -6,7 +6,7 @@ import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Styles from "../../styles/Pick.module.css";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 const Pick = ({ products }) => {
   console.log(products);
@@ -75,7 +75,9 @@ const Pick = ({ products }) => {
         className="text-white d-flex justify-content-between p-2 col-md-12"
         style={{ background: "#32629B", borderRadius: "20px" }}
       >
-        <span href="/shop">Pick Of The Week</span>
+        <Fade left>
+          <span href="/shop">Pick Of The Week</span>
+        </Fade>
 
         <Link href="/product">
           <a href="/product" className="link_white">
