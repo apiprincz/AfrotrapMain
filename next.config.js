@@ -25,7 +25,7 @@ module.exports = {
     // Note: we provide webpack above so you should not `require` it
     // Perform customizations to webpack config
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
-    config.node = {
+    config.node.isServer = {
       fs: true,
     };
 
