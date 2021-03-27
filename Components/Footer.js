@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Styles from "../styles/Footer.module.css";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 library.add(fab, faCartPlus);
 

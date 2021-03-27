@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import SwiperCore, { Navigation, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Styles from "../../styles/Flash.module.css";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 SwiperCore.use([A11y, Scrollbar, Navigation]);
 

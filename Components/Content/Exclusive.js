@@ -9,7 +9,7 @@ import SwiperCore, { Navigation, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useWindowResize } from "../../util/windowResize";
 import Styles from "../../styles/Exclusive.module.css";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 // install Swiper modules
 SwiperCore.use([A11y, Scrollbar, Navigation]);

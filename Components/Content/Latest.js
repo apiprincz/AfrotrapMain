@@ -7,7 +7,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import Styles from "../../styles/Latest.module.css";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 library.add(far, fas);
 

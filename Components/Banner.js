@@ -6,7 +6,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 library.add(fab, faCartPlus);
 
