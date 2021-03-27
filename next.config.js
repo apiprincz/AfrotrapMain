@@ -21,7 +21,10 @@ module.exports = {
   //   };
   //   return config;
   // },
-  webpack: (phase, { buildId, dev, isServer, defaultLoaders, fs, webpack }) => {
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, fs, webpack }
+  ) => {
     // Note: we provide webpack above so you should not `require` it
     // Perform customizations to webpack config
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
@@ -30,8 +33,6 @@ module.exports = {
     };
 
     // Important: return the modified config
-    return {
-      config,
-    };
+    return config;
   },
 };
