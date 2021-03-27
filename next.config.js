@@ -28,6 +28,9 @@ module.exports = {
     config.node = {
       fs: true,
     };
+    config.buildId = {
+      fs: true,
+    };
 
     // Important: return the modified config
     return config;
