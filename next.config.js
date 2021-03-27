@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+// const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
 module.exports = {
   env: {
