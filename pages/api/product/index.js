@@ -8,7 +8,6 @@ import Cors from "cors";
 
 dotenv.config({ path: "ENV_FILENAME" });
 
-require("dotenv").config({ path: "" });
 dbConnect();
 const cors = Cors({
   methods: ["GET", "HEAD"],

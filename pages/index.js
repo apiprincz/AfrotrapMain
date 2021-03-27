@@ -9,7 +9,7 @@ import { useState } from "react";
 import mongoose from "mongoose";
 import { MongoClient } from "mongodb";
 
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
 const Home = ({ products }) => {
   return (
@@ -31,7 +31,7 @@ const Home = ({ products }) => {
 export default Home;
 
 export async function getStaticProps() {
-  dotenv.config({ path: "ENV_FILENAME" });
+  // dotenv.config({ path: "ENV_FILENAME" });
 
   const client = new MongoClient(process.env.NEXT_PUBLIC_MONGODB_URL, {
     auth: {

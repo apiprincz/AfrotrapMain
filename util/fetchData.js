@@ -1,8 +1,11 @@
+// import dotenv from "dotenv";
+
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getData = async (url) => {
   const baseURL = `${BASE_URL}/api/${url}`;
   // const reqUrl = `${server}`;
+  // dotenv.config({ path: "ENV_FILENAME" });
 
   const res = await fetch(baseURL, {
     method: "GET",

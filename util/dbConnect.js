@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 // require("dotenv").config({ path: "ENV_FILENAME" });
-
+import dotenv from "dotenv";
 // require("dotenv").config();
 // const env = require("../env-config.js");
 
