@@ -17,12 +17,10 @@ const Banner = () => {
         className={`col-md-12 d-flex align-items-center ${Styles.Container}`}
       >
         <div className={`col-md-4 text-white ${Styles.Main}`}>
-          <Fade top>
-            <h1>
-              The <br></br> People<span style={{ color: "yellow" }}>'</span>s{" "}
-              <br></br> Hoodies Store
-            </h1>
-          </Fade>
+          <h1>
+            The <br></br> People<span style={{ color: "yellow" }}>'</span>s{" "}
+            <br></br> Hoodies Store
+          </h1>
 
           <p className="py-3">
             Your one-stop store that caters for Men, Women, Kids &amp; also{" "}

@@ -62,9 +62,7 @@ const Latest = () => {
         className=" d-flex justify-content-around p-2 col-md-12"
         style={{ background: "#20181842", borderRadius: "20px" }}
       >
-        <Fade left>
-          <span href="/shop">Latest Arrivals</span>
-        </Fade>
+        <span href="/shop">Latest Arrivals</span>
       </div>
       <div
         className={`d-flex col-md-12 col-12 flex-wrap ${Styles.LatestContainer} `}

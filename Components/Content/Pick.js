@@ -75,9 +75,7 @@ const Pick = ({ products }) => {
         className="text-white d-flex justify-content-between p-2 col-md-12"
         style={{ background: "#32629B", borderRadius: "20px" }}
       >
-        <Fade left>
-          <span href="/shop">Pick Of The Week</span>
-        </Fade>
+        <span href="/shop">Pick Of The Week</span>
 
         <Link href="/product">
           <a href="/product" className="link_white">

@@ -102,18 +102,17 @@ const Exclusive = () => {
             </div>
           </p>
         </div>
-        <Fade left>
-          <Link href="/product">
-            <a
-              href="/product"
-              className="fs-5 p-2 btn-desk"
-              style={{ color: "blue" }}
-            >
-              Visit Our Store
-              <FontAwesomeIcon icon={["fas", "caret-right"]} />
-            </a>
-          </Link>
-        </Fade>
+
+        <Link href="/product">
+          <a
+            href="/product"
+            className="fs-5 p-2 btn-desk"
+            style={{ color: "blue" }}
+          >
+            Visit Our Store
+            <FontAwesomeIcon icon={["fas", "caret-right"]} />
+          </a>
+        </Link>
       </div>
       <div className={`d-flex col-md-12 col-12  ${Styles.SwiperContainer}`}>
         <Swiper
@@ -234,18 +233,17 @@ const Exclusive = () => {
           })}
         </Swiper>
       </div>
-      <Fade left>
-        <Link href="/product">
-          <a
-            href="/product"
-            className="fs-5 p-2 btn-mobile"
-            style={{ color: "blue" }}
-          >
-            Visit Our Store
-            <FontAwesomeIcon icon={["fas", "caret-right"]} />
-          </a>
-        </Link>
-      </Fade>
+
+      <Link href="/product">
+        <a
+          href="/product"
+          className="fs-5 p-2 btn-mobile"
+          style={{ color: "blue" }}
+        >
+          Visit Our Store
+          <FontAwesomeIcon icon={["fas", "caret-right"]} />
+        </a>
+      </Link>
     </div>
   );
 };

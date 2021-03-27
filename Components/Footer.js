@@ -18,12 +18,11 @@ const Footer = () => {
           className={`col-md-12 d-flex justify-content-around flex-wrap align-items-center py-5 ${Styles.Subscribe}`}
           style={{ background: "#32629B" }}
         >
-          <Fade left>
-            <p className="text-white fStyle">
-              Subscribe to our newsletter <br className="break" /> to not miss
-              out cool deals
-            </p>
-          </Fade>
+          <p className="text-white fStyle">
+            Subscribe to our newsletter <br className="break" /> to not miss out
+            cool deals
+          </p>
+
           <form className="d-flex justify-content-between align-items-start flex-wrap">
             <div className="mb-3 col-12">
               <input

@@ -155,9 +155,8 @@ const Flash = () => {
           </Swiper>
         </div>
         <div className="col-lg-6 col-md-12 pt-4">
-          <Fade top>
-            <h1> FLASH SALES</h1>
-          </Fade>
+          <h1> FLASH SALES</h1>
+
           <span
             className={`text-end d-block fs-10 px-4 ${Styles.SalesPitch}`}
             style={{ color: "white" }}
