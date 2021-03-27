@@ -24,7 +24,7 @@ module.exports = {
     // Perform customizations to webpack config
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
     config.node = {
-      fs: false,
+      fs: true,
     };
     // Important: return the modified config
     return config;
