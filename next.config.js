@@ -24,16 +24,10 @@ module.exports = {
     // Perform customizations to webpack config
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
     config.node = {
-      fs: true,
+      fs: false,
     };
+
     // Important: return the modified config
     return config;
   },
-  // build: {
-  //   extend(config, {}) {
-  //     config.node = {
-  //       fs: "empty",
-  //     };
-  //   },
-  // },
 };
