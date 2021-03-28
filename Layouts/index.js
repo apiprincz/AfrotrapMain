@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { useWindowResize } from "../util/windowResize";
 import MobileNav from "../Components/MobileNav";
+import Notify from "../Components/Notify";
 
 export default function IndexLayout({ children }) {
   const { width } = useWindowResize();
@@ -18,6 +19,7 @@ export default function IndexLayout({ children }) {
 
       <div className="container-fluid p-0">
         {width < breakpoint ? <MobileNav /> : <Header />}
+        <Notify />
         {children}
         <Footer />
       </div>

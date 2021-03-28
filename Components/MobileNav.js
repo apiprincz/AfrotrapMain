@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Styles from "../styles/Mobile.module.css";
@@ -9,12 +9,15 @@ import { fas, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
+import { DataContext } from "../store/GlobalState";
 
 library.add(fab, faCartPlus);
 library.add(fas);
 
 const MobileNav = () => {
   const router = useRouter();
+  const [state, dispatch] = useContext(DataContext);
+  const { cart } = state;
 
   const isActive = (r) => {
     if (r === router.pathname) {
@@ -68,8 +71,8 @@ const MobileNav = () => {
               </Link>
             </li>
             <li className={`nav-item ${isActive("/kids")}`}>
-              <Link href="/product">
-                <a href="/product">Products</a>
+              <Link href="/collections">
+                <a href="/collections">Collections</a>
               </Link>
             </li>
             <li className={`nav-item ${isActive("/about")}`}>
@@ -98,7 +101,7 @@ const MobileNav = () => {
             <a href="#">
               Cart
               <FontAwesomeIcon icon={["fas", "cart-arrow-down"]} />
-              <div className=" cart_count">1</div>
+              <div className=" cart_count">{cart.length}</div>
             </a>
           </Link>
         </div>

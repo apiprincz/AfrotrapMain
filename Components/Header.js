@@ -79,8 +79,8 @@ const Header = () => {
                 </Link>
               </li>
               <li className={`nav-item ${isActive("/kids")}`}>
-                <Link href="/product">
-                  <a href="/product">Products</a>
+                <Link href="/collections">
+                  <a href="/collections">Collections</a>
                 </Link>
               </li>
               <li className={`nav-item ${isActive("/about")}`}>

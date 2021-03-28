@@ -7,7 +7,7 @@ import Image from "next/image";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import dotenv from "dotenv";
+
 import { useWindowResize } from "../../util/windowResize";
 import { addToCart } from "../../store/Actions";
 import { getData } from "../../util/fetchData.js";
@@ -27,15 +27,18 @@ const index = ({ products }) => {
 
   return (
     <IndexLayout>
-      <div className="px-5" style={{ paddingTop: "100px" }}>
-        <h1>Products</h1>
+      <div
+        className="px-5"
+        style={{ paddingTop: "130px", background: "#800080eb" }}
+      >
+        <h1 style={{ color: "greenyellow" }}>Collections</h1>
         <div className={` col-md-12 ${Styles.productContainer}`}>
           {products.map((product, index) => {
             return (
               <div
                 key={index}
                 style={{
-                  border: "1px solid #707070",
+                  border: "2px solid #FFFFFF",
                   //   minHeight: "400px",
                 }}
                 className={` col-md-4 ${Styles.product} pb-2`}
@@ -48,13 +51,20 @@ const index = ({ products }) => {
                     style={{ height: "240px" }}
                   />
 
-                  <div className="px-4 pt-2 text-start">
-                    <Link href={`/product/${product._id}`}>
-                      <a className="mb-0 ">{product.title}</a>
+                  <div className="px-4 pt-2 text-start text-white">
+                    <Link href={`/collections/${product._id}`}>
+                      <a
+                        className="mb-0 link-product link-title"
+                        style={{ whiteSpace: "break-spaces" }}
+                      >
+                        {product.title}
+                      </a>
                     </Link>
                     <p>
-                      <Link href={`/product/${product._id}`}>
-                        {numberFormat(product.price)}
+                      <Link href={`/collections/${product._id}`}>
+                        <a className="link-product">
+                          {numberFormat(product.price)}
+                        </a>
                       </Link>
                     </p>
                     <div className="d-flex justify-content-between">
@@ -86,13 +96,15 @@ const index = ({ products }) => {
                       </div>
                     </div>
                     <div className="d-flex justify-content-between pt-4">
-                      <Link href={`/product/${product._id}`}>Details</Link>
+                      <Link href={`/collections/${product._id}`}>
+                        <a className="link-product">Details</a>
+                      </Link>
                       <button
                         style={{
                           padding: "10px",
-                          background: "black",
-                          color: "#FFF",
-                          border: "1px solid grey",
+                          background: "radial-gradient(#ffffffb5, transparent)",
+                          color: "lemonchiffon",
+                          border: "1px solid",
                         }}
                         onClick={() => dispatch(addToCart(product, cart))}
                       >

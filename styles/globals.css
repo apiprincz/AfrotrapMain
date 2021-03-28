@@ -156,6 +156,13 @@ a.link_white svg:hover {
 .swiper_ex > .swiper-button-prev::after {
   display: none;
 }
+a.link-product:hover {
+  color: aqua;
+}
+a.link-title {
+  display: block;
+  min-height: 50px;
+}
 @media only screen and (max-width: 1000px) {
   .btn_colored {
     display: flex;

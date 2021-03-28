@@ -44,7 +44,7 @@ const cart = () => {
     <ProductLayout>
       <div className={` ${Styles.cartWrapper}`}>
         {cart.length > 0 ? (
-          <Link href="/product">
+          <Link href="/collections">
             <a
               className="mb-10"
               style={{
@@ -54,7 +54,7 @@ const cart = () => {
                 marginBottom: "10px",
               }}
             >
-              Back to Products
+              Back to Colections
             </a>
           </Link>
         ) : (
@@ -169,7 +169,7 @@ const cart = () => {
             <div className="col-md-10 " style={{ background: "white" }}>
               <span style={{ padding: "10px" }}>Cart Empty</span>
               <div>
-                <Link href="/product">
+                <Link href="/collections">
                   <a
                     style={{
                       background: "orange",
@@ -179,7 +179,7 @@ const cart = () => {
                       width: "200px",
                     }}
                   >
-                    Visit Product page
+                    Go to Collections
                   </a>
                 </Link>
               </div>

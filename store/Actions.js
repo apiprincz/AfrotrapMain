@@ -10,8 +10,9 @@ export const addToCart = (product, cart) => {
     return item._id !== product._id;
   });
 
-  if (!check) return { type: "ADD", payload: "The product has being added" };
-
+  if (!check)
+    return { type: "NOTIFY", payload: { error: "Item already added" } };
+  // dispatch({ type: "NOTIFY", payload: { success: "Added to cart" } });
   return { type: "ADD_CART", payload: [...cart, { ...product, quantity: 1 }] };
 };
 export const decrease = (data, id) => {
