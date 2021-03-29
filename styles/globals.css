@@ -47,6 +47,15 @@ li.nav-item a {
 li.nav-item a:hover {
   color: #191b1d;
 }
+li.active.nav-item a {
+  color: #191b1d;
+}
+li.nav-item a.mobile-link:hover {
+  color: #ffffff;
+}
+.Toastify__toast-container {
+  pointer-events: none;
+}
 
 .active svg {
   color: #191b1d;

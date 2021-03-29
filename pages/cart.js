@@ -1,7 +1,14 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { DataContext } from "../store/GlobalState";
 import ProductLayout from "../Layouts/productLayout";
-import { increase, decrease } from "../store/Actions";
+import {
+  increase,
+  decrease,
+  deleteItem,
+  notify,
+  resetNotif,
+  notifyDel,
+} from "../store/Actions";
 import Link from "next/link";
 import Styles from "../styles/Cart.module.css";
 
@@ -39,6 +46,14 @@ const cart = () => {
       style: "currency",
       currency: "USD",
     }).format(value);
+
+  const handleDelete = (item, cart) => {
+    dispatch(deleteItem(item, cart));
+    dispatch(notifyDel(item, cart));
+    setTimeout(function () {
+      dispatch(resetNotif(notify));
+    }, 3000);
+  };
 
   return (
     <ProductLayout>
@@ -84,6 +99,7 @@ const cart = () => {
                         <span
                           className="text-center"
                           style={{ fontSize: "50px" }}
+                          onClick={() => handleDelete(item, cart)}
                         >
                           x
                         </span>
@@ -99,7 +115,7 @@ const cart = () => {
                         <div className={`${Styles.cartFlex}`}>
                           <div className="d-flex flex-column justify-content-between">
                             <h3>
-                              <Link href={`/product/${item._id}`}>
+                              <Link href={`/collections/${item._id}`}>
                                 <a className="product_title">{item.title} </a>
                               </Link>
                             </h3>

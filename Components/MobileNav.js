@@ -50,7 +50,7 @@ const MobileNav = () => {
             className="navbar-nav d-flex flex-direction-column align-items-left"
             style={{ width: "100%", textAlign: "center" }}
           >
-            <li className={`nav-item ${isActive("/")}`}>
+            {/* <li className={`nav-item ${isActive("/")}`}>
               <Link href="/">
                 <a href="/">
                   <FontAwesomeIcon
@@ -59,31 +59,39 @@ const MobileNav = () => {
                   />
                 </a>
               </Link>
-            </li>
+            </li> */}
             <li className={`nav-item ${isActive("/men")}`}>
               <Link href="/men">
-                <a href="/men">Men</a>
+                <a href="/men" className="mobile-link">
+                  Men
+                </a>
               </Link>
             </li>
             <li className={`nav-item ${isActive("/women")}`}>
               <Link href="/women">
-                <a href="/women">Women</a>
+                <a href="/women" className="mobile-link">
+                  Women
+                </a>
               </Link>
             </li>
             <li className={`nav-item ${isActive("/kids")}`}>
               <Link href="/collections">
-                <a href="/collections">Collections</a>
+                <a href="/collections" className="mobile-link">
+                  Collections
+                </a>
               </Link>
             </li>
             <li className={`nav-item ${isActive("/about")}`}>
               <Link href="/about">
-                <a href="/">About Us</a>
+                <a href="/" className="mobile-link">
+                  About Us
+                </a>
               </Link>
             </li>
 
             <li className={`nav-item ${isActive("/signin")}`}>
               <Link href="/signin">
-                <a href="/">
+                <a href="/" className="mobile-link">
                   Login
                   <FontAwesomeIcon icon={["fas", "sign-in-alt"]} />
                 </a>
@@ -100,7 +108,10 @@ const MobileNav = () => {
           <Link href="/cart">
             <a href="#">
               Cart
-              <FontAwesomeIcon icon={["fas", "cart-arrow-down"]} />
+              <FontAwesomeIcon
+                icon={["fas", "cart-arrow-down"]}
+                style={{ color: "#FFFFFF" }}
+              />
               <div className=" cart_count">{cart.length}</div>
             </a>
           </Link>

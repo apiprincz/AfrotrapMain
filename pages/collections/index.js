@@ -10,10 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useWindowResize } from "../../util/windowResize";
 import { addToCart } from "../../store/Actions";
+import { notify } from "../../store/Actions";
 import { getData } from "../../util/fetchData.js";
-
+// import Notify from "../../Components/Notify";
 import Styles from "../../styles/Product.module.css";
 import { DataContext } from "../../store/GlobalState";
+import { resetNotif } from "../../store/Actions";
 
 const index = ({ products }) => {
   const [state, dispatch] = useContext(DataContext);
@@ -25,6 +27,13 @@ const index = ({ products }) => {
       currency: "USD",
     }).format(value);
 
+  const handleSubmit = (product, cart) => {
+    dispatch(addToCart(product, cart));
+    dispatch(notify(product, cart));
+    setTimeout(function () {
+      dispatch(resetNotif(notify));
+    }, 3000);
+  };
   return (
     <IndexLayout>
       <div
@@ -32,6 +41,7 @@ const index = ({ products }) => {
         style={{ paddingTop: "130px", background: "#800080eb" }}
       >
         <h1 style={{ color: "greenyellow" }}>Collections</h1>
+        {/* <Notify /> */}
         <div className={` col-md-12 ${Styles.productContainer}`}>
           {products.map((product, index) => {
             return (
@@ -106,7 +116,7 @@ const index = ({ products }) => {
                           color: "lemonchiffon",
                           border: "1px solid",
                         }}
-                        onClick={() => dispatch(addToCart(product, cart))}
+                        onClick={() => handleSubmit(product, cart)}
                       >
                         Add To Cart
                       </button>
@@ -126,7 +136,8 @@ export async function getServerSideProps(context) {
   const res = await getData("product");
   //   const data = await res.json();
   console.log(res);
-  // res = JSON.stringify(res.winners);
+  // res = JSON.stringify(res.winners)
+
   return {
     props: {
       products: JSON.parse(JSON.stringify(res.products)),

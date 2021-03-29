@@ -6,6 +6,8 @@ import { getData } from "../../util/fetchData";
 import Styles from "../../styles/Product.module.css";
 import { DataContext } from "../../store/GlobalState";
 import { addToCart } from "../../store/Actions";
+import { resetNotif } from "../../store/Actions";
+import { notify } from "../../store/Actions";
 
 const DetailProduct = ({ product }) => {
   const [tab, setTab] = useState(0);
@@ -35,6 +37,13 @@ const DetailProduct = ({ product }) => {
 
   const handleSelect = (e) => {
     setOption(e.target.value);
+  };
+  const handleSubmit = (product, cart) => {
+    dispatch(addToCart(product, cart));
+    dispatch(notify(product, cart));
+    setTimeout(function () {
+      dispatch(resetNotif(notify));
+    }, 3000);
   };
 
   useEffect(() => {
@@ -167,7 +176,7 @@ const DetailProduct = ({ product }) => {
                 border: "none",
               }}
               className="my-4"
-              onClick={() => dispatch(addToCart(product, cart))}
+              onClick={() => handleSubmit(product, cart)}
             >
               Add to Cart
             </button>

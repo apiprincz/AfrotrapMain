@@ -6,6 +6,7 @@ import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import "swiper/components/effect-flip/effect-flip.min.css";
 import "swiper/components/pagination/pagination.scss";
+import Notify from "../Components/Notify";
 
 import { DataProvider } from "../store/GlobalState";
 
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }) {
         ></link>
       </Head>
       <DataProvider>
+        <Notify />
         <Component {...pageProps} />
       </DataProvider>
     </>

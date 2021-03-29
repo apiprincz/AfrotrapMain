@@ -117,7 +117,7 @@ const Pick = ({ products }) => {
                   <p>
                     <s>{numberFormat(100)}</s>
                   </p>
-                  <Link href={`/product/${item._id}`}>
+                  <Link href={`/collections/${item._id}`}>
                     <a
                       style={{
                         background: "orange",

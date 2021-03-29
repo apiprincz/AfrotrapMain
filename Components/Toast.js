@@ -1,27 +1,53 @@
-import React from "react";
+import Link from "next/link";
+import React, { useRef, useEffect } from "react";
 
-const Toast = () => {
+const Toast = ({ msg, handleShow, type, show }) => {
+  const tRef = useRef();
+  const bgColor = (type) => {
+    switch (type) {
+      case "success":
+        return "bg-success";
+        break;
+
+      case "fail":
+        return "bg-danger";
+        break;
+
+      default:
+        break;
+    }
+  };
+  //   useEffect(() => {
+  //     $("#myToast").on("shown.bs.toast", function (e) {
+  //       return console.log("true");
+  //     });
+  //   }, []);
+  //   $("#myToast").on("shown.bs.toast", function (e) {
+  //     console.log("true");
+  //   });
+
   return (
     <div
-      className="toast"
+      className={`toast show ${bgColor(type)} position-fixed `}
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
+      data-autohide="false"
+      id="myToast"
+      style={{
+        position: "absolute",
+        color: "white",
+        top: "100px",
+        right: "20px",
+        transition: "opacity 1.4s ease-in-out",
+      }}
     >
-      <div class="toast-header">
-        <img src="..." class="rounded me-2" alt="...">
-          {" "}
-        </img>
-        <strong class="me-auto">Bootstrap</strong>
-        <small class="text-muted">11 mins ago</small>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="toast"
-          aria-label="Close"
-        ></button>
+      <div class="toast-body d-flex justify-content-between">
+        <p>{msg}</p>
+        <Link href="/cart">
+          <a>View Cart</a>
+        </Link>
       </div>
-      <div class="toast-body">Hello, world! This is a toast message.</div>
     </div>
   );
 };

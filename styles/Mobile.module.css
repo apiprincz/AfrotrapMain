@@ -38,13 +38,24 @@
 .navMenu > ul > li > a {
   color: #fff;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 .navMenu > ul {
-  height: 100%;
   justify-content: space-around;
+  height: 100%;
+}
+.navMenu > ul > li {
+  background: blueviolet;
+  height: 100%;
 }
 .navMenu > ul > li:hover {
-  background: #00000063;
+  background: #000000;
+}
+.navMenu > ul > li.nav-item a.mobile-link:hover {
+  color: white;
 }
 
 .navMenu_show {

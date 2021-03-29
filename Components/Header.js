@@ -78,7 +78,7 @@ const Header = () => {
                   <a href="/women">Women</a>
                 </Link>
               </li>
-              <li className={`nav-item ${isActive("/kids")}`}>
+              <li className={`nav-item ${isActive("/collections")}`}>
                 <Link href="/collections">
                   <a href="/collections">Collections</a>
                 </Link>
