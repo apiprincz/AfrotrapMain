@@ -8,6 +8,7 @@ import { fas, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
 import { DataContext } from "../store/GlobalState";
+import ProductMenu from "./ProductMenu";
 
 library.add(fab, faCartPlus);
 library.add(fas);
@@ -68,14 +69,14 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li className={`nav-item ${isActive("/men")}`}>
-                <Link href="/men">
+              <li className={`nav-item ${isActive("/collections/men")}`}>
+                <Link href="/collections/men">
                   <a href="/men">Men</a>
                 </Link>
               </li>
-              <li className={`nav-item ${isActive("/women")}`}>
-                <Link href="/women">
-                  <a href="/women">Women</a>
+              <li className={`nav-item ${isActive("/collections/women")}`}>
+                <Link href="/collections/women">
+                  <a href="/collections/women">Women</a>
                 </Link>
               </li>
               <li className={`nav-item ${isActive("/collections")}`}>
@@ -109,6 +110,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <ProductMenu />
     </div>
   );
 };

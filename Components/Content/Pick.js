@@ -79,7 +79,7 @@ const Pick = ({ products }) => {
           <span href="/shop">Pick Of The Week</span>
         </Fade>
 
-        <Link href="/product">
+        <Link href="/collections">
           <a href="/product" className="link_white">
             View All
             <FontAwesomeIcon icon={["fas", "caret-right"]} />
@@ -109,7 +109,7 @@ const Pick = ({ products }) => {
                   />
                 </motion.div>
 
-                <Link href={`/product/${item._id}`}>
+                <Link href={`/collections/${item._id}`}>
                   <a className="d-block pt-3">{item.title}</a>
                 </Link>
                 <p className="mb-0">{numberFormat(item.price)}</p>

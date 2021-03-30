@@ -97,8 +97,11 @@ const cart = () => {
                         key={index}
                       >
                         <span
-                          className="text-center"
-                          style={{ fontSize: "50px" }}
+                          className="text-center delBtn"
+                          style={{
+                            fontSize: "50px",
+                            cursor: "pointer",
+                          }}
                           onClick={() => handleDelete(item, cart)}
                         >
                           x

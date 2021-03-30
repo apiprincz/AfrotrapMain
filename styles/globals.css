@@ -28,6 +28,25 @@ a {
 .active {
   color: #191b1d;
 }
+.activex {
+  color: red;
+  background: white;
+  padding: 8px;
+  border-bottom: 3px solid blue;
+  transition: all 0.3s ease-in-out;
+}
+.productSubMenu:hover {
+  color: red;
+  background: #ffffffcc;
+  padding: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.productSubMenu a:hover {
+  color: red;
+  /* background: #ffffffcc; */
+  padding: 8px;
+  transition: all 0.3s ease-in-out;
+}
 svg {
   width: 24px;
   margin-left: 10px;
@@ -52,6 +71,9 @@ li.active.nav-item a {
 }
 li.nav-item a.mobile-link:hover {
   color: #ffffff;
+}
+.delBtn:hover {
+  border: 1px solid red;
 }
 .Toastify__toast-container {
   pointer-events: none;

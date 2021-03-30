@@ -38,9 +38,11 @@ const index = ({ products }) => {
     <IndexLayout>
       <div
         className="px-5"
-        style={{ paddingTop: "130px", background: "#800080eb" }}
+        style={{ paddingTop: "180px", background: "#800080eb" }}
       >
-        <h1 style={{ color: "greenyellow" }}>Collections</h1>
+        <h1 style={{ color: "greenyellow" }}>
+          <span className="text-white">Hoodies</span> / All Collections
+        </h1>
         {/* <Notify /> */}
         <div className={` col-md-12 ${Styles.productContainer}`}>
           {products.map((product, index) => {
